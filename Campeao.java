@@ -13,7 +13,7 @@ public abstract class Campeao {
         this.classe = classe;
     }
 
-    // Método abstrato que cada campeão deve implementar
+
     public abstract void explicarHabilidades();
 
     public void mostrarInformacoesCampeao() {

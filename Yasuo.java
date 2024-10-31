@@ -6,7 +6,8 @@ public class Yasuo extends Campeao {
                 "Fluxo",
                 "Yasuo é um espadachim ágil de Ionia, conhecido por sua habilidade de controlar o vento.",
                 new String[] {"Tempestade de Aço", "Muralha de Vento", "Espada Ágil", "Último Suspiro"},
-                new Classe.Lutador() // Definindo a classe inicial como Lutador
+                new Classe.Lutador() 
+            
         );
     }
 

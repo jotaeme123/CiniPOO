@@ -11,11 +11,11 @@ public class Darius extends Campeao {
     }
 
     @Override
-    public void explicarHabilidades() {
-        System.out.println("Habilidades de Darius:");
-        for (String habilidade : habilidades) {
-            System.out.println("- " + habilidade);
-        }
+public void explicarHabilidades() {
+    System.out.println("Habilidades de Darius:");
+    for (String habilidade : getHabilidades()) {
+        System.out.println("- " + habilidade);
     }
+}
 }
 

@@ -8,16 +8,23 @@ public class Classe {
     }
 
     public void mostrarEstilo() {
-        System.out.println("Classe: " + nome);
-        System.out.println("Descrição: " + descricao);
+        System.out.println("Classe: " + getNome());
+        System.out.println("Descrição: " + getDescricao());
     }
 
+    // Getters
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    // Subclasse Lutador
     public static class Lutador extends Classe {
         public Lutador() {
             super("Lutador", "Campeão que tem grande resistência e controle de área.");
         }
-
-
     }
 }
-

@@ -1,16 +1,26 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.util.Arrays;
-import java.util.List; 
+import java.util.List;
+import java.util.Random; 
 
 
 
 public class FileManager {
     /// atributo da classe filemanager
-    protected String Arquivo;
+    private String Arquivo;
+    private Random random = new Random();
+    String[][] lista = {
+        {"Irati", "Fernando","" + random.nextInt(100000)},
+        {"Irati", "Fernando","" + random.nextInt(100000)},
+        {"Irati", "Fernando","" + random.nextInt(100000)},
+        {"Irati", "Fernando","" + random.nextInt(100000)},
+        {"Irati", "Fernando","" + random.nextInt(100000),}
+    };
 
     /// construtor da classe filemanager
     public FileManager(String Arquivo) {
@@ -79,6 +89,29 @@ public class FileManager {
         } catch (Exception e) {
             e.printStackTrace();
         }    
+    }
+
+    public void escreveArquivo() {
+        File arquivo = new File(Arquivo);
+        try {
+            FileWriter fileWriter = new FileWriter(arquivo, true);
+            for(String [] valor:lista) {
+                StringBuilder line = new StringBuilder();
+                for(int i = 0; i < valor.length; i++) {
+                    line.append(valor[i]);
+                    if (i != valor.length  - 1) {
+                        line.append(',');
+                    }
+                }
+                line.append("\n");
+                fileWriter.append(line.toString());
+            }
+            fileWriter.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }
 

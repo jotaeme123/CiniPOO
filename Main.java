@@ -59,5 +59,6 @@ public class Main {
         System.out.println("===========================");
         System.out.println("LENDO 2 CAPITULO... (LENDO ARQUIVOS TXT:)");
         fmtxt.BuffereReaderlerArquivos();
+        fmcsv.escreveArquivo();
     }
 }

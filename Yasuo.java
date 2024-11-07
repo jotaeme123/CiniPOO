@@ -12,11 +12,11 @@ public class Yasuo extends Campeao {
     }
 
     @Override
-    public void explicarHabilidades() {
-        System.out.println("Habilidades de Yasuo:");
-        for (String habilidade : habilidades) {
-            System.out.println("- " + habilidade);
-        }
+public void explicarHabilidades() {
+    System.out.println("Habilidades de Yasuo:");
+    for (String habilidade : getHabilidades()) {
+        System.out.println("- " + habilidade);
     }
+}
 }
 

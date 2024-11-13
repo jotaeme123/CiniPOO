@@ -1,5 +1,5 @@
 public class Main {
-    // Método para imprimir informações sobre a região e evento histórico
+    /// método para imprimir informações sobre a região e evento histórico
     public static void imprimirInformacoesRegiao(Regiao regiao, EventoHistorico evento) {
         System.out.println(" -- " + regiao.getNome() + ": --");
         System.out.println(" HISTÓRIA DA REGIÃO:");
@@ -13,7 +13,12 @@ public class Main {
         System.out.println(" ");
     }
    public static void main(String[] args) {
-         // Região 1: Noxus
+
+        /// abrir interface grafica
+        InterfaceGrafica.abrir(new Home().mostrar());
+
+
+         /// Região 1: Noxus
         Regiao noxus = new Regiao("", "Darius", "");
         EventoHistorico eventoNoxus = new EventoHistorico("");
             noxus.setNome("Noxus");
@@ -21,7 +26,7 @@ public class Main {
             eventoNoxus.setLore("'Expansão Territorial: Noxus buscava expandir seu império e, sob generais como Darius, lançou campanhas de conquista. Essa busca por poder\n resultou na subjugação de várias regiões, incluindo Ionia. Contudo, a brutalidade das guerras gerou divisões internas,\n desafiando a unidade do império.'");
             imprimirInformacoesRegiao(noxus, eventoNoxus);
 
-        // Região 2: Bandópolis
+        /// Região 2: Bandópolis
         Regiao bandopolis = new Regiao("", "", "");
         EventoHistorico eventoBandopolis = new EventoHistorico("");
             bandopolis.setNome("Bandópolis");
@@ -29,7 +34,7 @@ public class Main {
             eventoBandopolis.setLore("A Grande Viagem: Bandle City é habitada por yordles curiosos que, durante a Grande Viagem, exploraram outros mundos. Teemo, Lulu e Rumble\n trouxeram sua magia e travessuras, criando novas amizades e enfrentando desafios. Essas aventuras ampliaram a cultura yordle e fortaleceram seu\n espírito brincalhão.'");
             imprimirInformacoesRegiao(bandopolis, eventoBandopolis);
 
-        // Região 3: Ionia
+        /// Região 3: Ionia
         Regiao ionia = new Regiao("Ionia", "Shen", "");
         EventoHistorico eventoIonia = new EventoHistorico("");
             ionia.setNome("Ionia");
@@ -64,7 +69,7 @@ public class Main {
         lulu.mostrarInformacoesCampeao();
         lulu.explicarHabilidades();
     
-        // Exibe os campeões associados a cada classe
+        /// exibe os campeões associados a cada classe
         System.out.println("\n" + "--------------------------");
         classeLutador.mostrarCampeoes();
         System.out.println("--------------------------");

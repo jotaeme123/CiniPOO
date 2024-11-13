@@ -78,11 +78,19 @@ public class Main {
         classeTank.mostrarCampeoes();
         System.out.println("--------------------------");
         classeSuporte.mostrarCampeoes();    
+        System.out.println("\n" + "--------------------------");
         
+        Item item1 = new Item("Espada do Rei Destruído", "Dano físico e roubo de vida", 3200, 40, 0, 0, 0, 20);
+        item1.exibirDetalhes();
+        System.out.println("\n" + "--------------------------");
+        Item item2 = new Item("Capuz da Morte de Rabadon", "Aumenta muito o poder mágico", 3600, 0, 0, 120, 0, 0);
+        item2.exibirDetalhes();
+
        /// instanciando a classe filemanager na main e usando o construtor
         FileManager fmcsv = new FileManager("./database/arquivo.csv");
         FileManager fmtxt = new FileManager("./database/arquivo.txt");
 
+        System.out.println("\n" + "--------------------------");
         System.out.println("===========================");
         System.out.println("PROCURANDO ALGO ESCONDIDO....");
         System.out.println("VOCÊ ACHOU UM LIVRO SOBRE RUNETERRA:");

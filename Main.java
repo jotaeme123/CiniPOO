@@ -13,8 +13,7 @@ public class Main {
         System.out.println(" ");
     }
    public static void main(String[] args) {
-        
-        // Região 1: Noxus
+         // Região 1: Noxus
         Regiao noxus = new Regiao("", "Darius", "");
         EventoHistorico eventoNoxus = new EventoHistorico("");
             noxus.setNome("Noxus");
@@ -38,16 +37,44 @@ public class Main {
             eventoIonia.setLore("'Guerra das Runas: Ionia era um lugar de paz até ser invadida por Noxus. Durante a guerra, os guerreiros ionianos, liderados por Shen e Kennen,\n lutaram para defender suas terras e preservar suas tradições. Apesar da destruição, a resistência do povo ioniano emergiu mais forte,\n moldando sua identidade.'");
             imprimirInformacoesRegiao(ionia, eventoIonia);
 
-        
-        Campeao yasuo = new Yasuo();
+        Classe.Lutador classeLutador = new Classe.Lutador();
+        Classe.Mago classeMago = new Classe.Mago();
+        Classe.Tank classeTank = new Classe.Tank();
+        Classe.Suporte classeSuporte = new Classe.Suporte();
+    
+        /// cria os campeões
+        Campeao yasuo = new Yasuo(classeLutador);
+        Campeao darius = new Darius(classeLutador);
+        Campeao karma = new Karma(classeMago);
+        Campeao sion = new Sion(classeTank);
+        Campeao lulu = new Lulu(classeSuporte);
+            
         yasuo.mostrarInformacoesCampeao();
         yasuo.explicarHabilidades();
-
-        Campeao darius = new Darius();
-        darius.mostrarInformacoesCampeao(); // Mostra informações de Darius
-        darius.explicarHabilidades(); // Explica as habilidades de Darius
-
-        /// instanciando a classe filemanager na main e usando o construtor
+    
+        darius.mostrarInformacoesCampeao();
+        darius.explicarHabilidades();
+    
+        karma.mostrarInformacoesCampeao();
+        karma.explicarHabilidades();
+    
+        sion.mostrarInformacoesCampeao();
+        sion.explicarHabilidades();
+    
+        lulu.mostrarInformacoesCampeao();
+        lulu.explicarHabilidades();
+    
+        // Exibe os campeões associados a cada classe
+        System.out.println("\n" + "--------------------------");
+        classeLutador.mostrarCampeoes();
+        System.out.println("--------------------------");
+        classeMago.mostrarCampeoes();
+        System.out.println("--------------------------");
+        classeTank.mostrarCampeoes();
+        System.out.println("--------------------------");
+        classeSuporte.mostrarCampeoes();    
+        
+       /// instanciando a classe filemanager na main e usando o construtor
         FileManager fmcsv = new FileManager("./database/arquivo.csv");
         FileManager fmtxt = new FileManager("./database/arquivo.txt");
 

@@ -11,6 +11,7 @@ public abstract class Campeao {
         this.historia = historia;
         this.habilidades = habilidades;
         this.classe = classe;
+        classe.adicionarCampeao(this);
     }
 
     public void explicarHabilidades() {
@@ -26,6 +27,7 @@ public abstract class Campeao {
 
     public void setClasse(Classe classe) {
         this.classe = classe;
+        classe.adicionarCampeao(this);
     }
 
     // Getters

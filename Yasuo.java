@@ -1,12 +1,12 @@
 public class Yasuo extends Campeao {
 
-    public Yasuo() {
+    public Yasuo(Classe classe) {
         super(
                 "Yasuo",
                 "Fluxo",
                 "Yasuo é um espadachim ágil de Ionia, conhecido por sua habilidade de controlar o vento.",
                 new String[] {"Tempestade de Aço", "Muralha de Vento", "Espada Ágil", "Último Suspiro"},
-                new Classe.Lutador() 
+                classe
             
         );
     }

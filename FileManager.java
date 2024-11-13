@@ -15,11 +15,11 @@ public class FileManager {
     private String Arquivo;
     private Random random = new Random();
     String[][] lista = {
-        {"Irati", "Fernando","" + random.nextInt(100000)},
-        {"Irati", "Fernando","" + random.nextInt(100000)},
-        {"Irati", "Fernando","" + random.nextInt(100000)},
-        {"Irati", "Fernando","" + random.nextInt(100000)},
-        {"Irati", "Fernando","" + random.nextInt(100000),}
+        {"Demacia", "Jarvan IV", "" + random.nextInt(100000)},
+        {"Piltover", "Caitlyn", "" + random.nextInt(100000)},
+        {"Zaun", "Ekko", "" + random.nextInt(100000)},
+        {"Freljord", "Ashe", "" + random.nextInt(100000)},
+        {"Shurima", "Azir", "" + random.nextInt(100000)}
     };
 
     /// construtor da classe filemanager

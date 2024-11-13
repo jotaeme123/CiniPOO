@@ -1,7 +1,1 @@
 BLUBLU,HAHA,BLEBLE
-A,F,1
-A,B,2
-A,C,100030
-Irati,Fernando,30780
-Irati,Fernando,72931
-Irati,Fernando,85749

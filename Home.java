@@ -23,10 +23,7 @@ public class Home extends InterfaceGrafica {
             }
         });
 
-
-
-
-
+        
         panel.add(buttonCSV);
         panel.add(buttonTXT);
         return panel;

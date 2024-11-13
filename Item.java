@@ -9,7 +9,14 @@ public class Item {
     private int velocidadeAtaque;
 
     // Construtor
-    public Item(String nome, String descricao, int preco, int dano, int armadura, int poderMagico, int vida, int velocidadeAtaque) {
+    public Item(String nome, String descricao, int preco, int dano, int armadura, int poderMagico, int vida, int velocidadeAtaque) throws ValorInvalidoException {
+        if (preco < 0) throw new ValorInvalidoException("O preço não pode ser negativo.");
+        if (dano < 0) throw new ValorInvalidoException("O dano não pode ser negativo.");
+        if (armadura < 0) throw new ValorInvalidoException("A armadura não pode ser negativa.");
+        if (poderMagico < 0) throw new ValorInvalidoException("O poder mágico não pode ser negativo.");
+        if (vida < 0) throw new ValorInvalidoException("A vida não pode ser negativa.");
+        if (velocidadeAtaque < 0) throw new ValorInvalidoException("A velocidade de ataque não pode ser negativa.");
+        
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;

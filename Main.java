@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
     /// método para imprimir informações sobre a região e evento histórico
     public static void imprimirInformacoesRegiao(Regiao regiao, EventoHistorico evento) {
@@ -42,50 +45,61 @@ public class Main {
             eventoIonia.setLore("'Guerra das Runas: Ionia era um lugar de paz até ser invadida por Noxus. Durante a guerra, os guerreiros ionianos, liderados por Shen e Kennen,\n lutaram para defender suas terras e preservar suas tradições. Apesar da destruição, a resistência do povo ioniano emergiu mais forte,\n moldando sua identidade.'");
             imprimirInformacoesRegiao(ionia, eventoIonia);
 
-        Classe.Lutador classeLutador = new Classe.Lutador();
-        Classe.Mago classeMago = new Classe.Mago();
-        Classe.Tank classeTank = new Classe.Tank();
-        Classe.Suporte classeSuporte = new Classe.Suporte();
+            Classe.Lutador classeLutador = new Classe.Lutador();
+            Classe.Mago classeMago = new Classe.Mago();
+            Classe.Tank classeTank = new Classe.Tank();
+            Classe.Suporte classeSuporte = new Classe.Suporte();
     
-        /// cria os campeões
-        Campeao yasuo = new Yasuo(classeLutador);
-        Campeao darius = new Darius(classeLutador);
-        Campeao karma = new Karma(classeMago);
-        Campeao sion = new Sion(classeTank);
-        Campeao lulu = new Lulu(classeSuporte);
-            
-        yasuo.mostrarInformacoesCampeao();
-        yasuo.explicarHabilidades();
+            /// Cria os campeões
+            List<Campeao> campeoes = Arrays.asList(
+                new Yasuo(classeLutador),
+                new Darius(classeLutador),
+                new Karma(classeMago),
+                new Sion(classeTank),
+                new Lulu(classeSuporte)
+            );
     
-        darius.mostrarInformacoesCampeao();
-        darius.explicarHabilidades();
+            for (Campeao campeao : campeoes) {
+                campeao.mostrarInformacoesCampeao();
+                campeao.explicarHabilidades();
+                System.out.println();
+            }
     
-        karma.mostrarInformacoesCampeao();
-        karma.explicarHabilidades();
-    
-        sion.mostrarInformacoesCampeao();
-        sion.explicarHabilidades();
-    
-        lulu.mostrarInformacoesCampeao();
-        lulu.explicarHabilidades();
-    
-        /// exibe os campeões associados a cada classe
-        System.out.println("\n" + "--------------------------");
-        classeLutador.mostrarCampeoes();
-        System.out.println("--------------------------");
-        classeMago.mostrarCampeoes();
-        System.out.println("--------------------------");
-        classeTank.mostrarCampeoes();
-        System.out.println("--------------------------");
-        classeSuporte.mostrarCampeoes();    
-        System.out.println("\n" + "--------------------------");
+            /// Exibe os campeões associados a cada classe
+            System.out.println("\n--------------------------");
+            classeLutador.mostrarCampeoes();
+            System.out.println("--------------------------");
+            classeMago.mostrarCampeoes();
+            System.out.println("--------------------------");
+            classeTank.mostrarCampeoes();
+            System.out.println("--------------------------");
+            classeSuporte.mostrarCampeoes();
         
-        Item item1 = new Item("Espada do Rei Destruído", "Dano físico e roubo de vida", 3200, 40, 0, 0, 0, 20);
-        item1.exibirDetalhes();
-        System.out.println("\n" + "--------------------------");
-        Item item2 = new Item("Capuz da Morte de Rabadon", "Aumenta muito o poder mágico", 3600, 0, 0, 120, 0, 0);
-        item2.exibirDetalhes();
-
+            try {
+                Item item1 = new Item("Espada do Rei Destruído", "Dano físico e roubo de vida", 3200, 40, 0, 0, 0, 20);
+                item1.exibirDetalhes();
+            } catch (ValorInvalidoException e) {
+                System.out.println("Erro ao criar o item: " + e.getMessage());
+            }
+    
+            System.out.println("\n--------------------------");
+    
+            try {
+                Item item2 = new Item("Capuz da Morte de Rabadon", "Aumenta muito o poder mágico", 3600, 0, 0, 120, 0, 0);
+                item2.exibirDetalhes();
+            } catch (ValorInvalidoException e) {
+                System.out.println("Erro ao criar o item: " + e.getMessage());
+            }
+    
+            System.out.println("\n--------------------------");
+    
+            try {
+                Item item3 = new Item("Item Troll", "Item com dano negativo troll", 2500, -50, 0, 0, 0, 0);
+                item3.exibirDetalhes();
+            } catch (ValorInvalidoException e) {
+                System.out.println("Erro ao criar o item: " + e.getMessage());
+            }
+        
        /// instanciando a classe filemanager na main e usando o construtor
         FileManager fmcsv = new FileManager("./database/arquivo.csv");
         FileManager fmtxt = new FileManager("./database/arquivo.txt");
